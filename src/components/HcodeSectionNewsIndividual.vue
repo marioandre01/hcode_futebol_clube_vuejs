@@ -6,7 +6,8 @@
 
         <div class="col-9">
             
-            <h2>{{ newsTitle }}</h2>
+            <!-- slot com nome para diferenciar do outro slot -->
+            <slot name="title"></slot>
 
             <!-- Aqui vai a info passada entre as tags <HcodeSectionNewsIndividual></HcodeSectionNewsIndividual> -->
             <!-- Se não for passado nada entre as tags vai ser colocado o texto "Notícia Padrão" -->
@@ -25,10 +26,6 @@ export default {
             required: true
         },
         imgInfo: {
-            type: String,
-            required: true
-        },
-        newsTitle: {
             type: String,
             required: true
         },

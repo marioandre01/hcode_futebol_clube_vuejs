@@ -6,11 +6,11 @@
                 :key="notice.id"
                 :imgName="notice.img"
                 :imgInfo="notice.imgInfo"
-                :newsTitle="notice.title"
                 :newsDate="notice.date"
             >
+
                 <template #title>
-                    <h2>{{ newsTitle }}</h2>
+                    <h2>{{ notice.title }}</h2>
                 </template>
 
                 <p>{{ notice.content | truncate(200) }}</p>
