@@ -2,42 +2,13 @@
     <section>
         <div class="container">
             <HcodeSectionNewsIndividual 
-                imgName="news1.jpg"
-                imgInfo="Notícia 1"
-                newsTitle="Começaram os treinos da nova temporada"
-                newsContent="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam necessitatibus 
-                tempore repudiandae? Autem ratione architecto omnis possimus, explicabo officia sequi 
-                aspernatur perspiciatis corrupti harum distinctio ex eum. Itaque, voluptas. Lorem ipsum dolor 
-                sit, amet consectetur adipisicing elit. Maiores quasi, natus labore repudiandae corporis sint 
-                mollitia aliquam minima quod sit voluptatum autem nemo et facilis provident optio expedita 
-                sapiente maxime."
-                newsDate="01/01/2021"
-            />
-            
-            <HcodeSectionNewsIndividual 
-                imgName="news2.jpg"
-                imgInfo="Notícia 2"
-                newsTitle="Jogo de quarta-feira termina empatado"
-                newsContent="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam necessitatibus 
-                tempore repudiandae? Autem ratione architecto omnis possimus, explicabo officia sequi 
-                aspernatur perspiciatis corrupti harum distinctio ex eum. Itaque, voluptas. Lorem ipsum dolor 
-                sit, amet consectetur adipisicing elit. Maiores quasi, natus labore repudiandae corporis sint 
-                mollitia aliquam minima quod sit voluptatum autem nemo et facilis provident optio expedita 
-                sapiente maxime."
-                newsDate="05/01/2021"
-            />
-
-            <HcodeSectionNewsIndividual 
-                imgName="news3.jpg"
-                imgInfo="Notícia 3"
-                newsTitle="Novo estádio será inaugurado na semana que vem"
-                newsContent="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam necessitatibus 
-                tempore repudiandae? Autem ratione architecto omnis possimus, explicabo officia sequi 
-                aspernatur perspiciatis corrupti harum distinctio ex eum. Itaque, voluptas. Lorem ipsum dolor 
-                sit, amet consectetur adipisicing elit. Maiores quasi, natus labore repudiandae corporis sint 
-                mollitia aliquam minima quod sit voluptatum autem nemo et facilis provident optio expedita 
-                sapiente maxime."
-                newsDate="03/02/2021"
+                v-for="notice in news"
+                :key="notice.id"
+                :imgName="notice.img"
+                :imgInfo="notice.imgInfo"
+                :newsTitle="notice.title"
+                :newsContent="notice.content"
+                :newsDate="notice.date"
             />
         </div>
     </section>
@@ -50,6 +21,38 @@ import HcodeSectionNewsIndividual from './HcodeSectionNewsIndividual'
 export default {
     components: {
         HcodeSectionNewsIndividual
+    },
+    data() {
+        return {
+            news: []
+        }
+        
+    },
+    created() {
+        this.news = [{
+            id: 1,
+            title:'Começaram os treinos da nova temporada',
+            content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam necessitatibus tempore repudiandae? Autem ratione architecto omnis possimus, explicabo officia sequi aspernatur perspiciatis corrupti harum distinctio ex eum. Itaque, voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores quasi, natus labore repudiandae corporis sint mollitia aliquam minima quod sit voluptatum autem nemo et facilis provident optio expedita sapiente maxime.',
+            date:'2021-01-01',
+            img: 'news1.jpg',
+            amgInfo: 'Notícia 1'
+        },{
+            id: 2,
+            title:'Jogo de quarta-feira termina empatado',
+            content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam necessitatibus tempore repudiandae? Autem ratione architecto omnis possimus, explicabo officia sequi aspernatur perspiciatis corrupti harum distinctio ex eum. Itaque, voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores quasi, natus labore repudiandae corporis sint mollitia aliquam minima quod sit voluptatum autem nemo et facilis provident optio expedita sapiente maxime.',
+            date:'2021-05-01',
+            img: 'news2.jpg',
+            amgInfo: 'Notícia 2'
+        },{
+            id: 3,
+            title:'Novo estádio será inaugurado na semana que vem',
+            content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam necessitatibus tempore repudiandae? Autem ratione architecto omnis possimus, explicabo officia sequi aspernatur perspiciatis corrupti harum distinctio ex eum. Itaque, voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores quasi, natus labore repudiandae corporis sint mollitia aliquam minima quod sit voluptatum autem nemo et facilis provident optio expedita sapiente maxime.',
+            date:'2021-03-02',
+            img: 'news3.jpg',
+            amgInfo: 'Notícia 3'
+        }
+        
+        ]
     }
 }
 </script>
