@@ -16,7 +16,7 @@
 import HcodeHeader from './components/HcodeHeader'
 import HcodeFooter from './components/HcodeFooter'
 import HcodeSection from './components/HcodeSection'
-import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'App',
@@ -31,16 +31,14 @@ export default {
     }
   },
   methods: {
-    //atualizando o valor de championship com setChampionship no store com o ajudante mapMutations
-    ...mapMutations({
-      changeChampionship: 'setChampionship'
-    }),
+    //usando o ajudante mapActions para chamar a action changeChampionship no store
+    ...mapActions(['changeChampionship']),
 
-    //atualizando o valor de championship com setChampionship no store
-    /* changeChampionship(value) {
-      this.$store.commit('setChampionship', value);
-
+    //chamando a action changeChampionship no store
+    /* changeChampionship: function(value) {
+      this.$store.dispatch('changeChampionship', value);
     }, */
+
     changeComponent(value) {
 
       let component;
