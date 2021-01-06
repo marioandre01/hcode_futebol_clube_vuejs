@@ -5,9 +5,12 @@
         </div>
 
         <div class="col-9">
+            
             <h2>{{ newsTitle }}</h2>
 
-            <p>{{ newsContent | truncate(200) }}</p>
+            <!-- Aqui vai a info passada entre as tags <HcodeSectionNewsIndividual></HcodeSectionNewsIndividual> -->
+            <!-- Se não for passado nada entre as tags vai ser colocado o texto "Notícia Padrão" -->
+            <slot>Notícia Padrão</slot>
 
             <span class="font-italic">{{ newsDate }}</span>
         </div>
@@ -26,10 +29,6 @@ export default {
             required: true
         },
         newsTitle: {
-            type: String,
-            required: true
-        },
-        newsContent: {
             type: String,
             required: true
         },
