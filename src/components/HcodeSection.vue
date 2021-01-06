@@ -5,8 +5,10 @@
                 <h3>Você está vendo notícias do {{ championship }}</h3>
             </div>
         </div>
-        <HcodeSectionBanner />
-        <HcodeSectionNews />
+
+        <!-- tag <component> - colocar no atributo "is" qual componente mostrar -->
+        <!-- tag <component> - usado para fazer componentes dinâmicos -->
+        <component :is="currentComponent"></component>
 
         <div class="container">
             <div class="row my-club mt-5">
@@ -36,11 +38,12 @@ export default {
     },
     data() {
         return {
-            myClub: 'Hcode Treinamentos'
+            myClub: 'Hcode Treinamentos',
         }
     },
     props: {
-        championship: String
+        championship: String,
+        currentComponent: String
     }
 }
 </script>
