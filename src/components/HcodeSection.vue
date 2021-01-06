@@ -27,13 +27,13 @@
 
 <script>
 import HcodeSectionBanner from './HcodeSectionBanner'
-import HcodeSectionNews from './HcodeSectionNews'
+// import HcodeSectionNews from './HcodeSectionNews'
 import HcodeInput from './HcodeInput'
 
 export default {
     components: {
         HcodeSectionBanner,
-        HcodeSectionNews,
+        HcodeSectionNews: () => import('./HcodeSectionNews'), // Async component - só é carregado quando for requisitado
         HcodeInput
     },
     data() {
