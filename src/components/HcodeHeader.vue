@@ -7,8 +7,11 @@
                 </a>
 
                 <div class="links mr-2">
-                    <a href="#" @click.prevent="$emit('change-component', 'home')" class="btn mr-5">Início</a>
-                    <a href="#" @click.prevent="$emit('change-component', 'news')" class="btn mr-5">Notícias</a>
+
+                    <!-- Definindo as rotas das opções de navegação do header -->
+                    <router-link to="/" class="btn mr-5">Início</router-link>
+                    <router-link to="/news" class="btn mr-5">Notícias</router-link>
+
                     <a href="#" class="btn mr-5">Classificações</a>
 
                     <!-- $emit - Passar informações para um componente pai (componente App). Primeiro parâmetro nome do evento a ser emitido, sengundo parâmetro o valor a ser passado -->
@@ -55,5 +58,9 @@
     .links a:focus{
         outline: none !important;
         box-shadow: none !important;
+    }
+    .link-active {
+        background-color: #fff;
+        color: #000 !important;
     }
 </style>

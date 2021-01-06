@@ -6,9 +6,7 @@
             </div>
         </div>
 
-        <!-- tag <component> - colocar no atributo "is" qual componente mostrar -->
-        <!-- tag <component> - usado para fazer componentes dinâmicos -->
-        <component :is="currentComponent"></component>
+        <router-view></router-view>
 
         <div class="container">
             <div class="row my-club mt-5">
@@ -26,14 +24,11 @@
 </template>
 
 <script>
-import HcodeSectionBanner from './HcodeSectionBanner'
 import HcodeInput from './HcodeInput'
 import { mapGetters } from 'vuex'
 
 export default {
     components: {
-        HcodeSectionBanner,
-        HcodeSectionNews: () => import('./HcodeSectionNews'), // Async component - só é carregado quando for requisitado
         HcodeInput
     },
     data() {
