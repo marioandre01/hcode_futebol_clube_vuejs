@@ -5,7 +5,6 @@
       @change-component="changeComponent"
     />
     <HcodeSection 
-      :championship="championship"
       :current-component="currentSectionComponent" 
     />
     <HcodeFooter />
@@ -33,11 +32,6 @@ export default {
   methods: {
     //usando o ajudante mapActions para chamar a action changeChampionship no store
     ...mapActions(['changeChampionship']),
-
-    //chamando a action changeChampionship no store
-    /* changeChampionship: function(value) {
-      this.$store.dispatch('changeChampionship', value);
-    }, */
 
     changeComponent(value) {
 

@@ -37,12 +37,7 @@ export default {
         ...mapGetters({
             news: 'getNews'
         })
-    },
-    mutations: {
-        setChampionship(state, newValue) {
-            state.championship = newValue;
-        }
-    }   
+    }  
 }
 </script>
 
